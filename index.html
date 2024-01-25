@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<style>
+	*{
+    margin: 0;
+    padding: 0;
+}
+</style>
+	</head>
+
+<body style="background-color: #FFD692;">
+
+	<div class="container">
+		<div class="position-relative">
+			<div class="position-absolute top-0 start-50 translate-middle-x">
+				<h3 style="background-color: #8DFF7A; font-family: 'CursiveFont', cursive;" class="p-2 rounded">
+					XYZ Academy</h3>
+			</div>
+		</div>
+	</div>
+	<br>
+	<form id="myForm">
+		<div class="container text-center mt-5">
+			<div class="row align-items-start">
+				<div class="col text-start">
+					Name : <input type="text" class="text-start" name="name" id="name">
+				</div>
+				<div class="col text-end">
+					Fees : <input type="text" class="text-end" name="fees" id="fees"
+						placeholder="Total fees will apper here " readonly>
+				</div>
+			</div>
+		</div>
+
+
+		<br>
+		<div style="background-color: #67F4F4;" class="container-sm  p-3">
+			<b>Cource Offered</b> <br>
+			<div class="container text-center">
+				<div class="row align-items-start text-start p-3">
+					<div class="col">
+						<input type="checkbox" name="c" id="c"> C(750) <br> <input type="checkbox" name="cpp" id="cpp">
+						Cpp(1000) <br>
+						<input type="checkbox" name="unix" id="unix"> Unix(1500) <br>
+						<input type="checkbox" name="linux" id="linux">
+						Linux(4000) <br> <input type="checkbox" name="aws" id="aws">
+						AWS(5000)
+					</div>
+					<div class="col">
+						<input type="checkbox" name="csharp" id="csharp">
+						CSharp(1500) <br> <input type="checkbox" name="asp" id="asp">
+						ASP.Net(2000) <br> <input type="checkbox" name="mvc" id="mvc">
+						MVC(1000) <br> <input type="checkbox" name="sqlserver" id="sqlserver"> SQL Server(500) <br>
+						<input type="checkbox" name="devops" id="devops"> DevOps(4000)
+					</div>
+					<div class="col">
+						<input type="checkbox" name="corejava" id="corejava"> Core
+						Java(1500) <br> <input type="checkbox" name="advjava" id="advjava"> Adv.Java(2000) <br>
+						<input type="checkbox" name="j2ee" id="j2ee"> J2EE(4000) <br>
+						<input type="checkbox" name="oracle" id="oracle">
+						Oracle(1000) <br> <input type="checkbox" name="spring" id="spring"> Spring(1500)
+					</div>
+					<div class="col">
+						<input type="checkbox" name="python" id="python">
+						Python(3000) <br> <input type="checkbox" name="hadoop" id="hadoop"> Hadoop(5000) <br> <input
+							type="checkbox" name="php" id="php"> PHP(2000) <br>
+						<input type="checkbox" name="mysql" id="mysql"> My
+						SQL(750) <br> <input type="checkbox" name="hibernate" id="hibernate"> Hibernate(1000)
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container text-start">
+			<b>Track</b>
+			<div class="row align-items-start">
+				<div class="col">
+					<input type="radio" name="radio" id="normal" checked> Normal
+				</div>
+				<div class="col">
+					<input type="radio" name="radio" id="fast"> fast(100)
+				</div>
+				<div class="col">
+					<input type="radio" name="radio" id="superfast"> Super
+					fast(200)
+				</div>
+			</div>
+		</div>
+	</form>
+
+	<div class="container text-center mt-3">
+		<div class="row align-items-start">
+			<div class="col text-start">
+				<button type="button" onclick="resetForm()" class="btn btn-outline-light bg-danger">Reset</button>
+			</div>
+		</div>
+	</div>
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+
+	<script>
+		function resetForm() {
+			document.getElementById("myForm").reset();
+		}
+
+		function updateTotalFees() {
+			var totalFees = 0;
+
+			
+			// Add fees based on selected track
+			if (document.getElementById("normal").checked) {
+				// Add fees based on selected courses
+			if (document.getElementById("c").checked) totalFees += 750;
+			if (document.getElementById("cpp").checked) totalFees += 1000;
+			if (document.getElementById("unix").checked) totalFees += 1500;
+			if (document.getElementById("linux").checked) totalFees += 4000;
+			if (document.getElementById("aws").checked) totalFees += 5000;
+
+			if (document.getElementById("csharp").checked) totalFees += 1500;
+			if (document.getElementById("asp").checked) totalFees += 2000;
+			if (document.getElementById("mvc").checked) totalFees += 1000;
+			if (document.getElementById("sqlserver").checked) totalFees += 500;
+			if (document.getElementById("devops").checked) totalFees += 4000;
+
+			if (document.getElementById("corejava").checked) totalFees += 1500;
+			if (document.getElementById("advjava").checked) totalFees += 2000;
+			if (document.getElementById("j2ee").checked) totalFees += 4000;
+			if (document.getElementById("oracle").checked) totalFees += 1000;
+			if (document.getElementById("spring").checked) totalFees += 1500;
+
+			if (document.getElementById("python").checked) totalFees += 3000;
+			if (document.getElementById("hadoop").checked) totalFees += 5000;
+			if (document.getElementById("php").checked) totalFees += 2000;
+			if (document.getElementById("mysql").checked) totalFees += 750;
+			if (document.getElementById("hibernate").checked) totalFees += 1000;
+
+			} else if (document.getElementById("fast").checked) {
+				// Add fees based on selected courses
+			if (document.getElementById("c").checked) totalFees += 750+100;
+			if (document.getElementById("cpp").checked) totalFees += 1000+100;
+			if (document.getElementById("unix").checked) totalFees += 1500+100;
+			if (document.getElementById("linux").checked) totalFees += 4000+100;
+			if (document.getElementById("aws").checked) totalFees += 5000+100;
+
+			if (document.getElementById("csharp").checked) totalFees += 1500+100;
+			if (document.getElementById("asp").checked) totalFees += 2000+100;
+			if (document.getElementById("mvc").checked) totalFees += 1000+100;
+			if (document.getElementById("sqlserver").checked) totalFees += 500+100;
+			if (document.getElementById("devops").checked) totalFees += 4000+100;
+
+			if (document.getElementById("corejava").checked) totalFees += 1500+100;
+			if (document.getElementById("advjava").checked) totalFees += 2000+100;
+			if (document.getElementById("j2ee").checked) totalFees += 4000+100;
+			if (document.getElementById("oracle").checked) totalFees += 1000+100;
+			if (document.getElementById("spring").checked) totalFees += 1500+100;
+
+			if (document.getElementById("python").checked) totalFees += 3000+100;
+			if (document.getElementById("hadoop").checked) totalFees += 5000+100;
+			if (document.getElementById("php").checked) totalFees += 2000+100;
+			if (document.getElementById("mysql").checked) totalFees += 750+100;
+			if (document.getElementById("hibernate").checked) totalFees += 1000+100;
+			} else if (document.getElementById("superfast").checked) {
+				// Add fees based on selected courses
+			if (document.getElementById("c").checked) totalFees += 750+200;
+			if (document.getElementById("cpp").checked) totalFees += 1000+200;
+			if (document.getElementById("unix").checked) totalFees += 1500+200;
+			if (document.getElementById("linux").checked) totalFees += 4000+200;
+			if (document.getElementById("aws").checked) totalFees += 5000+200;
+
+			if (document.getElementById("csharp").checked) totalFees += 1500+200;
+			if (document.getElementById("asp").checked) totalFees += 2000+200;
+			if (document.getElementById("mvc").checked) totalFees += 1000+200;
+			if (document.getElementById("sqlserver").checked) totalFees += 500+200;
+			if (document.getElementById("devops").checked) totalFees += 4000+200;
+
+			if (document.getElementById("corejava").checked) totalFees += 1500+200;
+			if (document.getElementById("advjava").checked) totalFees += 2000+200;
+			if (document.getElementById("j2ee").checked) totalFees += 4000+200;
+			if (document.getElementById("oracle").checked) totalFees += 1000+200;
+			if (document.getElementById("spring").checked) totalFees += 1500+200;
+
+			if (document.getElementById("python").checked) totalFees += 3000+200;
+			if (document.getElementById("hadoop").checked) totalFees += 5000+200;
+			if (document.getElementById("php").checked) totalFees += 2000+200;
+			if (document.getElementById("mysql").checked) totalFees += 750+200;
+			if (document.getElementById("hibernate").checked) totalFees += 1000+200;
+			}
+
+
+
+
+
+			// Update the readonly fees input field
+			document.getElementById("fees").value = totalFees;
+		}
+
+		// Attach change event listeners to checkboxes and radio buttons
+		var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+		checkboxes.forEach(function (checkbox) {
+			checkbox.addEventListener('change', updateTotalFees);
+		});
+
+		var radioButtons = document.querySelectorAll('input[type="radio"]');
+		radioButtons.forEach(function (radioButton) {
+			radioButton.addEventListener('change', updateTotalFees);
+		});
+
+	</script>
+</body>
+
+</html>
